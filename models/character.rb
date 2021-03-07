@@ -4,6 +4,8 @@ module AresMUSH
 
     attribute :pleroma_username
     attribute :pleroma_password
+
+    attribute :pleroma_last_notification_id
   end
 end
 
