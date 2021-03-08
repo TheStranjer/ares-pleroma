@@ -47,7 +47,7 @@ module AresMUSH
       end
 
       def submit_pose
-        body = { :status => event.pose, :visibility => "public" }
+        body = { :status => event.pose.gsub("%r", "\n").gsub(/\%x\w/, ""), :visibility => "public" }
         
         previous_pose = scene.poses_in_order[-2]
 
