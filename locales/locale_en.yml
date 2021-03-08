@@ -1,7 +1,7 @@
 en:
   pleroma:
     user_followed: "%xc%{account} %xnfrom the fediverse just followed you!"
-    user_mentioned: "%xc%{account} %xn from the fediverse just mentioned one of you:%r%r%xn%{message}"
+    user_mentioned: "%xc%{account} %xnfrom the fediverse just mentioned one of you:%r%r%xn%{message}"
     user_reblogged: "%xc%{account} %xnjust reblogged one of your in-character posts on the fediverse!"
     user_liked: "%xc%{account} %xnjust liked one of your in-character posts on the fediverse!"
       
