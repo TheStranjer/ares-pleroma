@@ -12,7 +12,7 @@ module AresMUSH
         @char = Character.find_one_by_name(event.enactor_id)
         @scene = Room[event.room_id].scene
 
-        return if scene.completed or scene.is_private?
+        return if scene.completed or scene.is_private? or event.is_ooc
 
         ensure_pleroma_account_exists
         ensure_pleroma_bearer_token
