@@ -38,7 +38,7 @@ module AresMUSH
       def ensure_pleroma_bearer_token
         return if char.pleroma_bearer_token
 
-        client_info = Pleroma::request(path: "/api/v1/apps", body: {'client_name': 'AresMUSH Pleroma', 'redirect_uris': "https://#{instance}/oauth-callback", 'scopes': 'read write follow push admin'})
+        client_info = Pleroma::request(path: "/api/v1/apps", body: {'client_name': 'AresMUSH Pleroma', 'redirect_uris': "https://#{Pleroma::instance}/oauth-callback", 'scopes': 'read write follow push admin'})
 
         bearer_info = Pleroma::request(path: "/oauth/token", body: { 'username': char.pleroma_username, 'password': char.pleroma_password, 'client_id': client_info['client_id'], 'client_secret': client_info['client_secret'], 'grant_type': 'password' })
 
