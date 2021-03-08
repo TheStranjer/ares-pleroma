@@ -32,7 +32,7 @@ module AresMUSH
           when 'follow'
             client.emit t('pleroma.user_followed', account: acct)
           when 'mention'
-            client.emit t('pleroma.user_mentioned', account: acct, message: notif['status']['pleroma']['content']['text/plain'])
+            client.emit t('pleroma.user_mentioned', account: acct, message: notif['status']['pleroma']['content']['text/plain']) if notif['account']['fqn'].split('@').last != Pleroma::instance
           when 'favourite'
             client.emit t('pleroma.user_liked', account: acct)
           else
