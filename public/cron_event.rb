@@ -21,6 +21,8 @@ module AresMUSH
         response = Pleroma::request(path: path, method: :get, bearer_token: client.char.pleroma_bearer_token)
 
         response.each do |notif|
+          Global.dispatcher.queue_event FediverseResponseEvent.new(notif, client)
+
           type = notif['type']
           acct = notif['account']['fqn']
 
