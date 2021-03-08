@@ -21,6 +21,13 @@ module AresMUSH
     end
 
     def self.get_cmd_handler(client, cmd, enactor)
+      case cmd.root
+      when "pleroma"
+        case cmd.switch
+        when "reveal"
+          return RevealCmd
+        end
+      end
     end
   end
 end
